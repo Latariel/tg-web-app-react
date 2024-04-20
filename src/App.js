@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
 <button onClick={onToggleButton}>does it work?</button>
-        <button onClick={onClose}>Закрыть</button>
+        {/*<button onClick={onClose}>Закрыть</button>*/}
     </div>
   );
 }
