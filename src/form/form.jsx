@@ -8,8 +8,8 @@ const Form = ()=> {
     const [subject, setSubject] = useState('physical');
     const {tg} = useTelegram()
 
-    useEffect(()=>{
-        tg.MianButton.SetParams({
+    useEffect(() => {
+        tg.MainButton.SetParams({
             text: 'Отправить Данные'
         })
     },[])
