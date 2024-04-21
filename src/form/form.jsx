@@ -67,14 +67,14 @@ const Form = () => {
                 <input
                     className={'input'}
                     type={'text'}
-                    placeholder={'aoaooaaoao'}
+                    placeholder={'ваш любимый покемон'}
                     value={country}
                     onChange={onChangeCountry}
                 />
                 <input
                     className={'input'}
                     type={'text'}
-                    placeholder={'улица'}
+                    placeholder={'сколько?'}
                     value={street}
                     onChange={onChangeStreet}
                 />
@@ -84,8 +84,8 @@ const Form = () => {
                     value={subject}
                     onChange={onChangeSubject}
                 >
-                    <option value={'legal'}>юр лицо</option>
-                    <option value={'legal'}> физ лицо</option>
+                    <option value={'legal'}>я пчеловод</option>
+                    <option value={'legal'}>Я БЕЛАЗ</option>
                 </select>
             </div>
         );
