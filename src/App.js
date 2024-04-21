@@ -27,8 +27,8 @@ function App() {
             <Route index element={<ProductList/>}/>
             <Route path={'/form'} element={<Form/>}/>
         </Routes>
-{/*<button onClick={onToggleButton}>does it work?</button>*/}
-        {/*<button onClick={onClose}>Закрыть</button>*/}
+{/*<Button onClick={onToggleButton}>does it work?</Button>*/}
+        {/*<Button onClick={onClose}>Закрыть</Button>*/}
     </div>
   );
 }

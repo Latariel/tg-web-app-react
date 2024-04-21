@@ -2,7 +2,8 @@
     padding: 10px 15px;
     background: var(--tg-theme-button-color);
     color: var(--tg-theme-button-text-color);
-    border: solid black 10px;
+    /*color: red;*/
+    /*border: solid black 10px;*/
     outline: none;
     cursor: pointer;
 
