@@ -4,9 +4,9 @@ import {useTelegram} from "../hooks/useTelegram";
 
 
 
-const Form = ()=> {
-    const [country, setCountry] = useState();
-    const [street, setStreet] = useState();
+const Form = () => {
+    const [country, setCountry] = useState('');
+    const [street, setStreet] = useState('');
     const [subject, setSubject] = useState('physical');
     const {tg} = useTelegram()
 
@@ -14,7 +14,7 @@ const Form = ()=> {
             const data = {
                 country,
                 street,
-                subject
+                subject,
             }
             tg.sendData(JSON.stringify(data))
         }, [], );
