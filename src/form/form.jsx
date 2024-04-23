@@ -1,48 +1,101 @@
-import React, {Component, useCallback, useEffect, useState} from 'react';
-import './form.css'
-import {useTelegram} from "../hooks/useTelegram";
+// import React, {Component, useCallback, useEffect, useState} from 'react';
+// import './form.css'
+// import {useTelegram} from "../hooks/useTelegram";
+//
+//
+//
+// const Form = () => {
+//     const [country, setCountry] = useState('');
+//     const [street, setStreet] = useState('');
+//     const [subject, setSubject] = useState('physical');
+//     const {tg} = useTelegram();
+//
+//     const onSendData = useCallback(() => {
+//             const data = {
+//                 country,
+//                 street,
+//                 subject,
+//             }
+//             tg.sendData(JSON.stringify(data))
+//         }, [country, street, subject])
+//
+//
+//     useEffect(() => {
+//             tg.onEvent('mainButtonClicked', onSendData)
+//         return () => {
+//             tg.onEvent('mainButtonClicked', onSendData)
+//         }
+//     },[onSendData])
+//
+//     useEffect(() => {
+//         tg.MainButton.setParams({
+//             text: 'Отправить Данные'
+//         })
+//     },[])
+//
+//     useEffect(()=>{
+//
+//         if (!street || !country){
+//             tg.MainButton.hide();
+//         } else {
+//             tg.MainButton.show();
+//         }
+//
+//     },[country, street])
+//
+//
+//     const onChangeCountry = (e) => {
+//         setCountry(e.target.value)
+//     }
+//
+//     const onChangeStreet = (e) => {
+//         setStreet(e.target.value)
+//     }
+//
+//     const onChangeSubject = (e) => {
+//         setSubject(e.target.value)
+//     }
 
+import React, {useCallback, useEffect, useState} from 'react';
+import './form.css';
+import {useTelegram} from "../hooks/useTelegram";
 
 
 const Form = () => {
     const [country, setCountry] = useState('');
     const [street, setStreet] = useState('');
     const [subject, setSubject] = useState('physical');
-    const {tg} = useTelegram()
+    const {tg} = useTelegram();
 
     const onSendData = useCallback(() => {
-            const data = {
-                country,
-                street,
-                subject,
-            }
-            tg.sendData(JSON.stringify(data))
-        }, [country, street, subject])
-    
+        const data = {
+            country,
+            street,
+            subject
+        }
+        tg.sendData(JSON.stringify(data));
+    }, [country, street, subject])
 
     useEffect(() => {
-            tg.onEvent('mainButtonClicked', onSendData)
+        tg.onEvent('mainButtonClicked', onSendData)
         return () => {
-            tg.onEvent('mainButtonClicked', onSendData)
+            tg.offEvent('mainButtonClicked', onSendData)
         }
-    },[onSendData])
+    }, [onSendData])
 
     useEffect(() => {
         tg.MainButton.setParams({
-            text: 'Отправить Данные'
+            text: 'Отправить данные'
         })
-    },[])
+    }, [])
 
-    useEffect(()=>{
-
-        if (!street || !country){
+    useEffect(() => {
+        if(!street || !country) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
         }
-
-    },[country, street])
-
+    }, [country, street])
 
     const onChangeCountry = (e) => {
         setCountry(e.target.value)
@@ -55,8 +108,6 @@ const Form = () => {
     const onChangeSubject = (e) => {
         setSubject(e.target.value)
     }
-
-
 
 
         return (
